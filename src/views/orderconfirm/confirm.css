@@ -1,0 +1,22 @@
+#title{
+    text-align: center;
+}
+table {
+    width: 100%;
+    
+}
+#title_wrap {
+    padding: 13px;
+    font-weight: bold;
+    vertical-align: middle;
+    background: #fbfbfb;
+    margin: 20px 10px;
+    border-bottom: 1px solid #ccc;
+}
+.nodata {
+    padding: 50px 0;
+    text-align: center;
+}
+thead{
+    border-bottom: solid 2px black;
+}
