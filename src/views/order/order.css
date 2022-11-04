@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+}
+#payment, #title{
+    text-align: center;
+}
+#payment {
+    background-color: #4a5164;
+    font-size: 20px;
+    line-height: 56px;
+    color: #fff;
+}
+
+#container {
+    margin: 50px 10px 10px 161px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    padding: 20px 20px 20px 20px;
+}
+#info {
+    padding-left: 15px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+input {
+    width: 350px;
+    height: 30px;
+    border: solid 1px #c6c9d2;
+   margin: 10px 10px;
+   display: block;
+}
+#product {
+    width: 500px;
+    height: 500px;
+    border: solid 1px #ccc;
+    display: inline;
+}
+#form {
+    border: solid 1px #ccc;
+    padding: 20px 20px;
+    margin-right: 100px;
+}
+#pay_info {
+    padding-left: 15px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+#line {
+    border-bottom: solid 2px black;
+    margin: 20px 20px;
+}
+.all_product {
+    margin-left: 20px;
+}
+#button {
+    width: 355px;
+    height: 38px;
+    margin-left: 10px;
+    margin-top: 10px;
+}

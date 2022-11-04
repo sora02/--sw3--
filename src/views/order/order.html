@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문 상세 페이지</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    
+    <div id="header">
+        <h3 id="title">shop</h3>
+    </div>
+    <div id="payment">
+        <span>주문/결제</span>
+    </div>
+    <span id="container">
+    <!--배송지 정보-->
+    <span id="form">
+        <span id="info" >배송지정보</span>
+        <form  action="">
+            이름* <input type="text" id="name" required>
+            전화번호* <input type="text" id="phone_number" required>
+            주소* <input type="text" id="address_kakao" name="address" value= "이곳을 클릭하세요" readonly required>
+            상세주소* <input type="text" id="detail_address" name="address" required>
+            요청사항 <input type="text" id="memo">
+           <button id="button">주문하기</button>
+        </form>
+    </span>
+    <!--결제 정보-->
+    <span id="product">
+        <div id="pay_info">결제정보</div>
+        <div id="line"></div>
+        <span class="all_product">주문상품</span>
+        <span>상품이름</span>
+        <div></div>
+        
+    </span>
+    </span>  
+</body>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    window.onload = function(){
+        document.getElementById("address_kakao").addEventListener("click", function(){
+            new daum.Postcode({
+                oncomplete : function(data){
+                    document.getElementById("address_kakao").value = data.address;
+                    document.querySelector("input[name=address]").focus();
+                }
+            }).open()
+        })
+    }
+</script>
+<script src="order.js"></script>
+</html>
