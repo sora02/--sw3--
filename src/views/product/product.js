@@ -21,36 +21,11 @@ function addAllEvents() {}
 
 async function addProductItemsToContainer() {
   // 제품들 예시
-    let Example = [{
-    title: "화사한 옷",
-    img: "/img/2.PNG",
-    shortDescription: "화사하다",
-    price: 10000,
-},{
-    title: "귀여운 옷",
-    img: "/img/3.PNG",
-    shortDescription: "귀엽다",
-    price: 15000,
-},{
-    title: "예쁜 옷",
-    img: "/img/4.PNG",
-    shortDescription: "예쁘다",
-    price: 17000,
-},
-{
-    title: "편안한 옷",
-    img: "/img/5.PNG",
-    shortDescription: "편안하다",
-    price: 18000,
-},{
-    title: "아이후드",
-    img: "/img/6.PNG",
-    shortDescription: "후드티",
-    price: 15000,
-},
-]
+  const { category } = getUrlParams();
+  const products = await Api.get(`/api/productlist/category/${category}`);
+
 // 제품들 insert로 html에 집어넣기
-     Example.forEach(async (product) => {
+     products.forEach(async (product) => {
       // 객체 destructuring
       const { _id, title, shortDescription, img, price } =
         product;
@@ -79,7 +54,7 @@ async function addProductItemsToContainer() {
       const productItem = document.querySelector(`#a${random}`);
       productItem.addEventListener(
         "click",
-        navigate(`/product_detail/a${random}`)
+        navigate(`/product/detail?id=${_id}`)
       );
     });
   }
