@@ -9,7 +9,7 @@ import { errorHandler } from "./middlewares";
 import { productRouter, viewsRouter, userRouter, orderRouter, categoryRouter, cartRouter } from "./routers";
 const app = express();
 
-// CORS 에러 방지
+// CORS 에러 방지//
 app.use(cors());
 
 // Content-Type: application/json 형태의 데이터를 인식하고 핸들링할 수 있게 함.
