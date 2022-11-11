@@ -32,7 +32,7 @@ async function categoryadd(e) {
   try {
     const data = { title };
 
-    await Api.post("/api/category", data);
+    await Api.post("/api/categories/register", data);
     
     alert(`정상적으로 ${title} 카테고리가 등록되었습니다.`);
     window.location.href="/home";

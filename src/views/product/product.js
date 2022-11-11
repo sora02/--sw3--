@@ -22,7 +22,7 @@ function addAllEvents() {}
 async function addProductItemsToContainer() {
   // 제품들 예시
   const { category } = getUrlParams();
-  const products = await Api.get(`/api/productlist/category/${category}`);
+  const products = await Api.get(`/api/categories/${category}/products`);
 
 // 제품들 insert로 html에 집어넣기
      products.forEach(async (product) => {

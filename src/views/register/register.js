@@ -48,7 +48,7 @@ async function handleSubmit(e) {
 
   // 회원가입 api 요청
   try {
-    const data = { fullName, email, password };
+    const data = { fullName, email, password, passwordConfirm };
 
     await Api.post("/api/register", data);
 

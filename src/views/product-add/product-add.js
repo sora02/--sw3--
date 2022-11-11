@@ -1,5 +1,9 @@
 import { addImageToS3 } from "../../aws-s3.js"; //못 불러오고 있음
 import * as Api from "../../api.js";
+import {
+  randomId,
+} from "../useful-functions.js";
+
 //import { checkLogin, randomId, createNavbar } from "../../useful-functions.js";
 
 // 요소(element)들과 상수들
@@ -53,17 +57,17 @@ async function handleSubmit(e) {
   const price = parseInt(priceInput.value);
 
   // 입력 칸이 비어 있으면 진행 불가
-  if (
-    !title ||
-    !categoryId ||
-    !manufacturer ||
-    !shortDescription ||
-    !detailDescription ||
-    !inventory ||
-    !price
-  ) {
-    return alert("빈 칸 및 0이 없어야 합니다.");
-  }
+  // if (
+  //   !title ||
+  //   !categoryId ||
+  //   !manufacturer ||
+  //   !shortDescription ||
+  //   !detailDescription ||
+  //   !inventory ||
+  //   !price
+  // ) {
+  //   return alert("빈 칸 및 0이 없어야 합니다.");
+  // }
 
   if (image.size > 3e6) {
     return alert("사진은 최대 2.5MB 크기까지 가능합니다.");
@@ -77,7 +81,7 @@ async function handleSubmit(e) {
     const imageKey = await addImageToS3(imageInput, categoryName);
     const data = {
       title,
-      // categoryId,
+      categoryId,
       manufacturer,
       shortDescription,
       detailDescription,
@@ -87,7 +91,7 @@ async function handleSubmit(e) {
       searchKeywords,
     };
 
-    await Api.post("/api/products", data);
+    await Api.post(`/api/categories/${categoryId}/products`, data);
     
     alert(`정상적으로 ${title} 제품이 등록되었습니다.`);
 
@@ -117,7 +121,7 @@ function handleImageUpload() {
 
 // 선택할 수 있는 카테고리 종류를 api로 가져와서, 옵션 태그를 만들어 삽입함.
 async function addOptionsToSelectBox() {
-  const categorys = await Api.get("/api/categorylist");
+  const categorys = await Api.get("/api/categories");
   categorys.forEach((category) => {
     // 객체 destructuring
     const { _id, title, themeClass } = category;
