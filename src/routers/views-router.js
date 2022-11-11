@@ -10,6 +10,10 @@ viewsRouter.use("/", serveStatic("home"));
 viewsRouter.use("/register", serveStatic("register"));
 viewsRouter.use("/login", serveStatic("login"));
 
+// "home"이건 나중에 메인 페이지로 업데이트 해야한다.
+viewsRouter.use("/products", serveStatic("home"));
+
+
 // views 폴더의 최상단 파일인 rabbit.png, api.js 등을 쓸 수 있게 함
 viewsRouter.use("/", serveStatic(""));
 

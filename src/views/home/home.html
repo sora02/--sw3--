@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>쇼핑-n팀</title>
+    <title>18team shoppingmall</title>
     <!-- 아이콘 -->
     <link
       rel="icon"
@@ -23,56 +23,105 @@
       crossorigin="anonymous"
     ></script>
     <!-- 커스텀 css, js -->
-    <link rel="stylesheet" href="home.css" />
-    <script src="home.js" type="module" defer></script>
+    <link rel="stylesheet" href="/home/home.css" />
+    <script src="/home/home.js" type="module" defer></script>
+
   </head>
   <body>
+
+
+
     <!-- 헤더 -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="container mt-3">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <img src="/elice-rabbit.png" width="30" height="30" />
-            <span class="has-text-link">쇼핑-n팀</span>
-          </a>
-
-          <a
-            role="button"
-            class="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-
+    <header style="text-align : center;">
+        <a href="/home/home.html" >shop</a>
+      </header>
+    <nav>
         <div class="navbar-end breadcrumb my-auto" aria-label="breadcrumbs">
           <ul id="navbar">
-            <li><a href="/login">로그인</a></li>
-            <li><a href="/register">회원가입</a></li>
+            <li><a href="/login/login.html">LOGIN</a></li>
+            <li><a href="/register/register.html">REGISTER</a></li>
+            <li><a href="/account/account.html">MYPAGE</a></li>
+            <li><a href="/adminManage/admin.html">ADMINMANGE</a></li>
             <li>
-              <a href="#cart" aria-current="page">
+              <a href="/cart/cart.html" aria-current="page">
                 <span class="icon">
                   <i class="fas fa-cart-shopping"></i>
                 </span>
-                <span>카트</span>
+                <span>CART</span>
               </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+ 
+                          <!--메뉴 바(수정)-->
+            <div class="left-side-bar">
+              <div class="status-ico">
+                  <span>▶</span>
+                  <span>▼</span>
+              </div>
 
+              <ul>
+                  <li>
+                      <a href="/product/product.html">1차 메뉴 아이템1</a>
+                  </li>
+                  <li>
+                      <a href="#">1차 메뉴 아이템2</a>
+                  </li>
+                  <li>
+                      <a href="#">1차 메뉴 아이템3</a>
+                  </li>
+                  <li>
+                      <a href="#">1차 메뉴 아이템4</a>
+                  </li>
+                  <li>
+                      <a href="#">1차 메뉴 아이템5</a>
+                  </li>
+              </ul>
+            </div>
+
+<!--이미지-->
+
+
+
+<script>
+    var index = 0;   
+    window.onload = function(){
+        slideShow();
+    }
+    
+    function slideShow() {
+    var i;
+    var x = document.getElementsByClassName("slide1");  
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";   
+    }
+    index++;
+    if (index > x.length) {
+        index = 1;  
+    }   
+    x[index-1].style.display = "block";  
+    setTimeout(slideShow, 4000);  
+ 
+}
+</script>
+ 
+<body>
     <div class="div-container">
-      <div class="landing" id="landingDiv">
-        <h1>랜딩 페이지</h1>
-      </div>
-      <div class="greeting" id="greetingDiv">
-        <h1>안녕하세요!</h1>
-      </div>
+<div style="text-align : center;">
+    <img class="slide1" src="/home/IMG_6473.png" width="700" height="500">
+  <img class="slide1" src="/home/IMG_0145.png"  width="700" height="500">
+  <img class="slide1" src="/home/IMG_0146.png"  width="700" height="500">
+  <img class="slide1" src="/home/IMG_0148.png" width="700" height="500">
+  <img class="slide1" src="/home/IMG_6255.png" width="700" height="500">
+  <img class="slide1" src="/home/IMG_6258.png" width="700" height="300">
+  
+  <img class="slide1" src="/home/IMG_7656.png" width="700" height="500">
+  <img class="slide1" src="/home/jiseung.png" width="700" height="500">
+</div>
     </div>
   </body>
+
 </html>
+

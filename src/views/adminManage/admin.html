@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>관리자페이지</title>
+        <!-- 아이콘 -->
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/elice-rabbit-favicon.png"
+        />
+        <!-- bulma css -->
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+        />
+        <!-- 폰트 어썸: 아이콘 -->
+        <script
+          defer
+          src="https://kit.fontawesome.com/7630448495.js"
+          crossorigin="anonymous"
+        ></script>
+        <!-- 커스텀 css, js -->
+        <link rel="stylesheet" href="/adminManage/admin.css" />
+        <script src="/adminManage/admin.js" type="module" defer></script>
+        
+      </head>
+
+<body>
+
+       <!-- 헤더 -->
+       <header style="text-align : center;">
+        <a href="/home/home.html" >shop</a>
+      </header>
+    <nav>
+        <div class="navbar-end breadcrumb my-auto" aria-label="breadcrumbs">
+          <ul id="navbar">
+            <li><a href="/account/account.html">MYPAGE</a></li>
+            <li>
+              <a href="/cart/cart.html" aria-current="page">
+                <span class="icon">
+                  <i class="fas fa-cart-shopping"></i>
+                </span>
+                <span>CART</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+         <!-- admin -->
+     <section>
+        <div class = "container">
+            <div class="menu">
+                <a class="menu-card" href="#order">
+                    <div class="menu-icon">
+                      <span class="icon has-text-info">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                      </span>
+                    </div>
+                    <div class="menu-body">
+                      <p class="title is-3">주문현황</p>
+                    </div>
+                  </a>
+            </div>
+            <div class="menu">
+                <a class="menu-card" href="#Category">
+                    <div class="menu-icon">
+                      <span class="icon has-text-info">
+                        <i class="fa-solid fa-bars"></i>
+                      </span>
+                    </div>
+                    <div class="menu-body">
+                      <p class="title is-3" onclick="location.href='/category_add/category_add.html'">카테고리 추가</p>
+                    </div>
+                  </a>
+            </div>
+            <div class="menu">
+                <a class="menu-card" href="#Product">
+                    <div class="menu-icon">
+                      <span class="icon has-text-info">
+                       
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </span>
+                    </div>
+                    <div class="menu-body">
+                      <p class="title is-3" onclick="location.href='/product-add/product-add.html'">상품 추가</p>
+                    </div>
+                  </a>
+            </div>
+        </div>
+     </section>
+</body>
+</html>

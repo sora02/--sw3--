@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>카테고리추가_관리자</title>
+        <!-- 아이콘 -->
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/elice-rabbit-favicon.png"
+        />
+        <!-- bulma css -->
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+        />
+        <!-- 폰트 어썸: 아이콘 -->
+        <script
+          defer
+          src="https://kit.fontawesome.com/7630448495.js"
+          crossorigin="anonymous"
+        ></script>
+        <!-- 커스텀 css, js -->
+        <link rel="stylesheet" href="/category_add/category_add.css" />
+        <script src="/category_add/category_add.js" type="module" defer></script>
+        
+      </head>
+    <body>
+
+           <!-- 헤더 -->
+           <header style="text-align : center;">
+            <a href="/home/home.html" >shop</a>
+          </header>
+        <nav>
+            <div class="navbar-end breadcrumb my-auto" aria-label="breadcrumbs">
+              <ul id="navbar">
+                <li>
+                  <a href="/cart/cart.html" aria-current="page">
+                    <span class="icon">
+                      <i class="fas fa-cart-shopping"></i>
+                    </span>
+                    <span>CART</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+
+            <!-- 카테고리 추가 폼(Form) -->
+    <section class="section">
+        <div class="container">
+
+          </div>
+          <div class="register-category-form-container">
+            <form
+              class="box register-category-form-box"
+              id="registerCategoryForm"
+            >
+              <p class="title is-5 has-text-dark">카테고리 관리</p>
+              <div class="field">
+                <label class="label" for="titleInput">카테고리 종류</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    id="titleInput"
+                    type="text"
+                    placeholder="OUTER"
+                    autocomplete="on"
+                  />
+                </div>
+              </div>
+  
+              <button
+                class="button is-info "
+                id="addCategoryButton"
+              >
+                추가하기
+              </button>
+              <button 
+              class="button is-info "
+              id="addCategoryButton"
+              type="button"
+              onclick="location.href='category_edit.html'"
+            >
+              수정하기
+            </button>
+              <button
+              class="button is-info "
+              id="addCategoryButton"
+            >
+              삭제하기
+            </button>
+       
+            </form>
+          </div>
+        </div>
+      </section>
+    </body>
+  </html>
+  

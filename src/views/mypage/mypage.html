@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MYPAGE</title>
+    <!-- 커스텀 css, js -->
+    <link rel="stylesheet" href="/mypage/mypage.css" />
+    <!-- bulma css 관련 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <!-- 폰트 어썸: 아이콘 -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/7630448495.js"
+      crossorigin="anonymous"
+    ></script>
+  </script>
+  <!-- 커스텀 js -->
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="/mypage/mypage.js" type="module" defer></script>
+  </head>
+  <body>
+    <!--headder-->
+    <header style="text-align : center;">
+      <a href="/home/home.html" >shop</a>
+    </header>
+
+  <nav>
+      <div class="navbar-end breadcrumb my-auto" aria-label="breadcrumbs">
+        <ul id="navbar">
+          <li><a href="/account/account.html">MYPAGE</a></li>
+          <li>
+            <a href="/cart/cart.html" aria-current="page">
+              <span class="icon">
+                <i class="fas fa-cart-shopping"></i>
+              </span>
+              <span>CART</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- 회원정보관리-->
+    <div
+      class="edit-user-form-container"
+    >
+      <form class="box edit-user-form-box" id="editUserForm">
+        <p class="title is-5 has-text-dark">회원정보수정</p>
+        <div class="field">
+          <label class="label" for="fullNameInput">이름 * </label>
+          <div class="control">
+            <input
+              class="input"
+              id="fullNameInput"
+              type="text"
+              placeholder="유재석"
+              autocomplete="on"
+              disabled
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="emailInput">이메일 *</label>
+          <div class="control">
+            <input
+              class="input"
+              id="emailInput"
+              type="email"
+              placeholder="abc@example.com"
+              autocomplete="on"
+              disabled
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="newPasswordInput">비밀번호 *</label>
+          <div class="control">
+            <input
+              class="input"
+              id="newPasswordInput"
+              type="password"
+              placeholder="********"
+              autocomplete="off"
+            />
+           
+          </div>
+        </div>
+
+        <div class="field mb-5">
+          <label class="label" for="newPasswordConfirmInput"
+            >비밀번호 확인 *</label
+          >
+          <div class="control">
+            <input
+              class="input"
+              id="newPasswordConfirmInput"
+              type="password"
+              placeholder="********"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="phoneNumberInput">전화번호 *</label>
+          <div class="control">
+            <input
+              class="input"
+              id="phoneNumberInput"
+              type="number"
+              placeholder="전화번호는 - 없이 입력해 주세요."
+              autocomplete="on"
+            />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="addressInput">주소 *</label>
+          <div class="control">
+            <div id="postColumn" class="columns is-gapless">
+              <div class="column is-one-quarter">
+                <input
+                  class="input"
+                  id="addressInput"
+                  type="text"
+                  autocomplete="on"
+                  placeholder="우편번호"
+                  readonly
+                  onclick="findAddr()"
+                />
+              </div>
+              <div class="column">
+                <input
+                  class="input"
+                  id="userAddress"
+                  type="text"
+                  autocomplete="on"
+                  placeholder="도로명주소"
+                  readonly
+                />
+              </div>
+            </div>
+            <input
+              class="input"
+              id="userAddressDetail"
+              type="text"
+              autocomplete="on"
+              placeholder="상세주소"
+            />
+          </div>
+        </div>
+         <!-- 코드리뷰 -->
+        <button
+          class="button is-dark is-fullwidth"
+          id="submitButton"
+          type="button" 
+        >
+          수정하기
+        </button>
+      </form>
+    </div>
+
+
+  </body>
+</html>

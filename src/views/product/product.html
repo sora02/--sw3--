@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="product.css">
+    <!-- bulma css 관련 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script
+    defer
+    src="https://kit.fontawesome.com/9daa42bcef.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="product.js" type="module" ref></script>
+</head>
+
+<body>
+
+    <!-- 헤더 -->
+    <header style="text-align : center;">
+        <a href="/home/home.html" >shop</a>
+      </header>
+    <nav>
+        <div class="navbar-end breadcrumb my-auto" aria-label="breadcrumbs">
+          <ul id="navbar">
+            <li><a href="/login/login.html">LOGIN</a></li>
+            <li><a href="/register/register.html">REGISTER</a></li>
+            <li><a href="/account/account.html">MYPAGE</a></li>
+            <li>
+              <a href="/cart/cart.html" aria-current="page">
+                <span class="icon">
+                  <i class="fas fa-cart-shopping"></i>
+                </span>
+                <span>CART</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!--메뉴 바(수정)-->
+<div class="left-side-bar">
+    <div class="status-ico">
+        <span>▶</span>
+        <span>▼</span>
+    </div>
+
+    <ul>
+        <li>
+            <a href="/product/product.html">1차 메뉴 아이템1</a>
+        </li>
+        <li>
+            <a href="#">1차 메뉴 아이템2</a>
+        </li>
+        <li>
+            <a href="#">1차 메뉴 아이템3</a>
+        </li>
+        <li>
+            <a href="#">1차 메뉴 아이템4</a>
+        </li>
+        <li>
+            <a href="#">1차 메뉴 아이템5</a>
+        </li>
+    </ul>
+  </div>
+
+
+ <!-- 상품 리스트 나열 -->
+    <div id="editors-pick">
+        <div class="content-inner">
+            <h3 class="title-large line">
+                <strong class="title-bold">Product List</strong>
+                <p class="title-thin">
+                    Shopping
+                </p>
+            </h3>
+            <div class="list-columns round" id="container">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+.account-header {
+    display: block;
+    border-bottom: #ddd 1px solid;
+    padding-bottom: 0.7rem;
+  }
+  
+  .register-category-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+  }
+  
+  .register-category-form-box {
+    width: 30rem;
+  }
+  
+  .register-category-form-box .title {
+    text-align: center;
+    
+  }
+  
+  .register-category-form-box .button {
+    font-weight: bold;
+    background-color: black;
+   
+  }
+  

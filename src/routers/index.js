@@ -3,3 +3,11 @@
 
 export * from "./views-router";
 export * from "./user-router";
+// <<<<<<< HEAD
+export * from "./order-router";
+// =======
+export * from "./product-router";
+export * from "./cart-router";
+// >>>>>>> remotes/origin/feature-BE-product
+export * from "./order-router";
+export * from "./category-router";
