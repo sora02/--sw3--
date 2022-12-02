@@ -7,14 +7,19 @@ import {
     checkUrlParams,
   
 } from "../useful-functions.js";
+import createNavbar  from "/navbar.js";
 
-const containerElem = document.querySelector("#container");
+const productcontainerElem = document.querySelector("#product-container");
+const titleBoldElem = document.querySelector("#title-bold");
+const titleThinElem = document.querySelector("#title-thin");
 
 addAllElements();
 addAllEvents();
 
 function addAllElements() {
     addProductItemsToContainer();
+    createNavbar();
+    addTitleBold();
 }
   
 function addAllEvents() {}
@@ -22,24 +27,18 @@ function addAllEvents() {}
 async function addProductItemsToContainer() {
   // 제품들 예시
   const { category } = getUrlParams();
-  const products = await Api.get(`/api/categories/${category}/products`);
+  const products = await Api.get(`/api/products/${category}`);
 
 // 제품들 insert로 html에 집어넣기
      products.forEach(async (product) => {
       // 객체 destructuring
-      const { _id, title, shortDescription, img, price } =
-        product;
+      const { title, price, shortDescription, _id} = product;
       const random = randomId();
-        console.log(_id, random);
-      containerElem.insertAdjacentHTML(
+      productcontainerElem.insertAdjacentHTML(
         "beforeend",
         `<div class="individual" id="a${random}">
         <a href="/product_detail/product_detail.html">
-        
-            <p class="list-img">
-                <img src=${img} alt="제품사진">
-                
-            </p>
+
             </a>
             <div class="phrase">
                 <strong class="text-small">${title}</strong>
@@ -57,5 +56,9 @@ async function addProductItemsToContainer() {
         navigate(`/product/detail?id=${_id}`)
       );
     });
+  }
+  function addTitleBold () {
+    const { category } = getUrlParams();
+    titleBoldElem.innerHTML = category;
   }
   

@@ -1,5 +1,6 @@
 import * as Api from '../api.js';
 
+
 const submitButton = document.querySelector('#submitButton');
 const fullNameInput = document.querySelector('#fullNameInput');
 const emailInput = document.querySelector('#emailInput');

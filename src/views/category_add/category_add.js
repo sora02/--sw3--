@@ -1,6 +1,10 @@
 //import { addImageToS3 } from "../../aws-s3.js";
 import * as Api from "../api.js";
-
+import {
+  getUrlParams,
+  navigate,
+  checkUrlParams,
+} from "../useful-functions.js";
 
 const titleInput = document.querySelector("#titleInput");
 const newtitleInput = document.querySelector("#newtitleInput");
@@ -8,7 +12,6 @@ const addButton = document.querySelector("#addCategoryButton");
 const editButton = document.querySelector("#editCategoryButton");
 const deleteButton = document.querySelector("#deleteCategoryButton");
 const registerCategoryForm = document.querySelector("#registerCategoryForm");
-
 //const categoryData = await Api.get(`/api/category/${category}`);
 
 addAllEvents();
@@ -23,19 +26,19 @@ function addAllEvents() {
 // 카테고리 추가하기 - 카테고리 정보를 백엔드 db에 저장.
 async function categoryadd(e) {
   e.preventDefault();
-  const title = titleInput.value;
+  const category = titleInput.value;
   // 입력 칸이 비어 있으면 진행 불가
-  if (!title) {
+  if (!category) {
     return alert("내용을 입력해주세요.");
   }
 
   try {
-    const data = { title };
+    const data = { category };
 
     await Api.post("/api/categories/register", data);
     
-    alert(`정상적으로 ${title} 카테고리가 등록되었습니다.`);
-    window.location.href="/home";
+    alert(`정상적으로 ${category} 카테고리가 등록되었습니다.`);
+    navigate(`/home`)
     // 폼 초기화
     registerCategoryForm.reset();
    
@@ -49,19 +52,19 @@ async function categoryadd(e) {
 //카테고리 삭제
 async function categorydelete(e) {
     e.preventDefault();
-    const title = titleInput.value;
+    const category = titleInput.value;
     
     // 입력 칸이 비어 있으면 진행 불가
-    if (!title ) {
+    if (!category ) {
       return alert("내용을 입력해주세요.");
     }
   
     try {
-      const data = { title };
+      const data = { category };
   
-      await Api.delete(`/api/category/${categoryData}`, data);
+      await Api.delete(`/api/categories/${categoryData}`, data);
   
-      alert(`정상적으로 ${title} 카테고리가 삭제되었습니다.`);
+      alert(`정상적으로 ${category} 카테고리가 삭제되었습니다.`);
   
       // 폼 초기화
       registerCategoryForm.reset();
@@ -75,19 +78,19 @@ async function categorydelete(e) {
 async function categoryedit(e) {
   e.preventDefault();
 
-  const title = titleInput.value;
-  const newtitle = newtitleInput.value;
+  const beCategory = titleInput.value;
+  const category = newtitleInput.value;
   
   // 입력 칸이 비어 있으면 진행 불가
-  if (!newtitle ) {
+  if (!category ) {
     return alert("내용을 입력해주세요.");
   }
 
   try {
    
-    await Api.patch(`/api/category/${categoryData}`, {title});
+    await Api.patch(`/api/categories/${categoryData}`, {category});
 
-    alert(`${title} -> ${newtitle} 카테고리로 수정되었습니다.`);
+    alert(`${beCategory} -> ${category} 카테고리로 수정되었습니다.`);
 
     // 폼 초기화
     registerCategoryForm.reset();

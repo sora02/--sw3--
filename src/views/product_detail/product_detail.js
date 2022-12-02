@@ -1,37 +1,36 @@
-import * as Api from "../api.js";
+import * as Api from "/api.js";
 import {
     getUrlParams,
     addCommas,
     checkUrlParams,
-    navigate,
-  } from "../useful-functions.js";
-  
+  } from "/useful-functions.js";
+  import createNavbar  from "/navbar.js";
 
    
 const productImageTag = document.querySelector("#productImageTag");
 const titleTag = document.querySelector("#titleTag");
 const detailDescriptionTag = document.querySelector("#detailDescriptionTag");
-const priceTag = document.querySelector("#price");
+const priceTag = document.querySelector("#priceTag");
 const addToCartButton = document.querySelector("#addToCartButton");
 const purchaseButton = document.querySelector("#purchaseButton");
 
 
 insertProductData();
+createNavbar();
 
 async function insertProductData() {
   const { id } = getUrlParams();
-  const product = await Api.get(`/api/products/${id}`);
-
+  const product = await Api.get(`/api/products/detail/${id}`);
     // 객체 destructuring
     const {
       title,
       detailDescription,
-      imageKey,
+      //imageKey,
       price,
     } = product;
-    const imageUrl = await getImageUrl(imageKey);
+    //const imageUrl = await getImageUrl(imageKey);
   
-    productImageTag.src = imageUrl;
+    //productImageTag.src = imageUrl;
     titleTag.innerText = title;
     detailDescriptionTag.innerText = detailDescription;
     priceTag.innerText = `${addCommas(price)}원`;

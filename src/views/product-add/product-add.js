@@ -3,7 +3,6 @@ import * as Api from "../../api.js";
 import {
   randomId,
 } from "../useful-functions.js";
-
 //import { checkLogin, randomId, createNavbar } from "../../useful-functions.js";
 
 // 요소(element)들과 상수들
@@ -24,12 +23,11 @@ const submitButton = document.querySelector("#submitButton");
 const registerProductForm = document.querySelector("#registerProductForm");
 
 //checkLogin();
-//addAllElements();
+addAllElements();
 addAllEvents();
 
 // html에 요소를 추가하는 함수들을 묶어주어서 코드를 깔끔하게 하는 역할임.
 function addAllElements() {
-  createNavbar();
   addOptionsToSelectBox();
 }
 
@@ -49,11 +47,9 @@ async function handleSubmit(e) {
  
   const title = titleInput.value;
   const categoryId = categorySelectBox.value;
-  const manufacturer = manufacturerInput.value;
   const shortDescription = shortDescriptionInput.value;
   const detailDescription = detailDescriptionInput.value;
   const image = imageInput.files[0];
-  const inventory = parseInt(inventoryInput.value);
   const price = parseInt(priceInput.value);
 
   // 입력 칸이 비어 있으면 진행 불가
@@ -69,29 +65,27 @@ async function handleSubmit(e) {
   //   return alert("빈 칸 및 0이 없어야 합니다.");
   // }
 
-  if (image.size > 3e6) {
-    return alert("사진은 최대 2.5MB 크기까지 가능합니다.");
-  }
+  // if (image.size > 3e6) {
+  //   return alert("사진은 최대 2.5MB 크기까지 가능합니다.");
+  // }
 
   // S3 에 이미지가 속할 폴더 이름은 카테고리명으로 함.
   const index = categorySelectBox.selectedIndex;
   const categoryName = categorySelectBox[index].text;
 
   try {
-    const imageKey = await addImageToS3(imageInput, categoryName);
+    //const imageKey = await addImageToS3(imageInput, categoryName);
     const data = {
       title,
       categoryId,
-      manufacturer,
       shortDescription,
       detailDescription,
-      imageKey,
-      inventory,
+      // imageKey,
       price,
       searchKeywords,
     };
 
-    await Api.post(`/api/categories/${categoryId}/products`, data);
+    await Api.post(`/api/products/register`, data);
     
     alert(`정상적으로 ${title} 제품이 등록되었습니다.`);
 
@@ -121,17 +115,16 @@ function handleImageUpload() {
 
 // 선택할 수 있는 카테고리 종류를 api로 가져와서, 옵션 태그를 만들어 삽입함.
 async function addOptionsToSelectBox() {
-  const categorys = await Api.get("/api/categories");
-  categorys.forEach((category) => {
+  const categorys = await Api.get("/api/categories/get");
+  for(const Onecategory of categorys) {
     // 객체 destructuring
-    const { _id, title, themeClass } = category;
+    const { _id, category } = Onecategory;
 
     categorySelectBox.insertAdjacentHTML(
       "beforeend",
-      `
-      <option value=${_id} class="notification ${themeClass}"> ${title} </option>`
+      `<option value=${_id} class="notification"> ${category} </option>`
     );
-  });
+  };
 }
 
 // 카테고리 선택 시, 선택박스에 해당 카테고리 테마가 반영되게 함.

@@ -1,21 +1,31 @@
 import { Schema } from "mongoose";
-// name, shortDesc, price, stock, brand, size
+
 const ProductSchema = new Schema(
   {
-    name: {
+    title: {
       type: String,
-      required: true,
+    },
+    categoryId: {
+      type: Schema.Types.ObjectId,
+      ref: "categories",
+    },
+    shortDescription: {
+      type: String,
+    },
+    detailDescription: {
+      type: String,
     },
     price: {
       type: Number,
-      required: true,
     },
-    brand: {
-      type: String, 
-      required: true,
+    searchKeywords: {
+      type: [String],
     },
-  }, { 
-    timestamps: true
+  },
+  {
+    collection: "products",
+    timestamps: true,
   }
-)
+);
+
 export { ProductSchema };

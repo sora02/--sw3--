@@ -10,17 +10,21 @@ export class ProductModel {
       return createdNewProduct;
     }
     
-    async findByName(name) {
-      const foundProduct = await Product.findOne({ name });
+    async findAllByCategoryId(categoryId) {
+      const foundProduct = await Product.find({ categoryId });
       return foundProduct;
     }
 
-
+    async findByProductId(productId) {
+      const product = await Product.findOne({ _id: productId});
+      return product;
+    }
+  
     async findAll() {
       const products = await Product.find({});
       return products;
     }
-
+    
     async updateProduct(name, update) {
       const filter = { name };
       const option = { returnOriginal: false };

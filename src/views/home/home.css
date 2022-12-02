@@ -105,3 +105,6 @@ body {
 .left-side-bar:hover > .status-ico > span:first-child {
     display: none;
 }
+.category:hover {
+    cursor: pointer;
+}

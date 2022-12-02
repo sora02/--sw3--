@@ -6,10 +6,10 @@ import { adminGuard } from "../middlewares";
 const productRouter = Router();
 
 // API 확인 완료
-productRouter.post("/register", loginRequired, adminGuard, async (req, res, next) => {  
+productRouter.post("/register", loginRequired,  async (req, res, next) => {  
   try {
-    const { name, brand, price } = req.body
-    const productInfo = { name, brand, price };
+    const { title, categoryId, price, shortDescription, detailDescription, searchKeywords } = req.body
+    const productInfo = { title, categoryId, price, shortDescription, detailDescription, searchKeywords };
     const createdProduct = await productService.addProduct(productInfo);
     res.json(createdProduct);
   } catch(err) {
@@ -18,7 +18,7 @@ productRouter.post("/register", loginRequired, adminGuard, async (req, res, next
 });
 
 // API 확인 완료
-productRouter.get("/", async (req, res, next) => {
+productRouter.get("/get", async (req, res, next) => {
   try {
     const allProducts = await productService.getAllProdcuts()
     res.json(allProducts);
@@ -29,11 +29,22 @@ productRouter.get("/", async (req, res, next) => {
 
 // API 확인 완료
 // :name을 :_id로 바꿀 시 오류 발생.
-productRouter.get("/:name", async (req, res, next) => {
-  const { name } = req.params;
+productRouter.get("/:category", async (req, res, next) => {
+  const { category } = req.params;
   try {
     console.log(req);
-    const foundProduct = await productService.getProduct(name);
+    const foundProduct = await productService.getProduct(category);
+    res.json(foundProduct);
+  } catch(err) {
+    next(err);
+  }
+
+})
+productRouter.get("/detail/:id", async (req, res, next) => {
+  const { id } = req.params.id;
+  try {
+    console.log(req);
+    const foundProduct = await productService.getProductById(id);
     res.json(foundProduct);
   } catch(err) {
     next(err);
@@ -41,11 +52,11 @@ productRouter.get("/:name", async (req, res, next) => {
 })
 
 // API 확인 완료
-productRouter.patch("/:name", loginRequired, adminGuard, async (req, res, next) => {
-  const { name } = req.params;
+productRouter.patch("/:category", loginRequired, adminGuard, async (req, res, next) => {
+  const { category } = req.params;
   const { brand, price} = req.body;
   try {
-    const updatedProduct = await productService.updateProduct(name, { brand, price });
+    const updatedProduct = await productService.updateProduct(category, { brand, price });
     res.json(updatedProduct);
   } catch (err) {
     next(err);
@@ -53,10 +64,10 @@ productRouter.patch("/:name", loginRequired, adminGuard, async (req, res, next) 
 })
 
 // API 확인 완료 
-productRouter.delete("/:name", loginRequired, adminGuard, async (req, res, next) => {
-  const { name } = req.params;
+productRouter.delete("/:category", loginRequired, adminGuard, async (req, res, next) => {
+  const { category } = req.params;
   try {
-    const deletedProduct = await productService.deleteProduct(name);
+    const deletedProduct = await productService.deleteProduct(category);
     res.json(deletedProduct);
   } catch(err) {
     next(err);
