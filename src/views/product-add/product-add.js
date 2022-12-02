@@ -1,5 +1,5 @@
-import { addImageToS3 } from "../../aws-s3.js"; //못 불러오고 있음
-import * as Api from "../../api.js";
+//import { addImageToS3 } from "/aws-s3.js"; //못 불러오고 있음
+import * as Api from "/api.js";
 import {
   randomId,
 } from "../useful-functions.js";
@@ -71,16 +71,16 @@ async function handleSubmit(e) {
 
   // S3 에 이미지가 속할 폴더 이름은 카테고리명으로 함.
   const index = categorySelectBox.selectedIndex;
-  const categoryName = categorySelectBox[index].text;
+  //const categoryName = categorySelectBox[index].text;
 
   try {
-    //const imageKey = await addImageToS3(imageInput, categoryName);
+   //const imageKey = await addImageToS3(imageInput, categoryName);
     const data = {
       title,
       categoryId,
       shortDescription,
       detailDescription,
-      // imageKey,
+      //imageKey,
       price,
       searchKeywords,
     };

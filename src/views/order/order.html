@@ -19,16 +19,14 @@
     </div>
     <span class="delivery-container">
     <!--배송지 정보-->
+    <section   action=""></section>
     <span class="form">
         <span id="info" >배송지정보</span>
-        <form  action="">
             <label for="name">이름*</label>  <input type="text" id="name" required>
             <label for="phone_number">전화번호*</label>  <input type="text" id="phone_number" required>
             <label for="address">주소*</label>  <input type="text" id="address_kakao" name="address" value= "이곳을 클릭하세요" readonly required>
             <label for="detail_address">상세주소*</label>  <input type="text" id="detail_address" name="address" required>
             <label for="memo">요청사항</label>  <input type="text" id="memo">
-           <button id="button">주문하기</button>
-        </form>
     </span>
     <!--결제 정보-->
     <span class="product">
@@ -53,7 +51,9 @@
             <span class="span">총 결제금액</span>
             <span class="total-price" id="total-price"></span>
         </div>
+        <button id="button">주문하기</button>
     </span>
     </span>  
+</section>
 </body>
 </html>
