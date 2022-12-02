@@ -7,7 +7,7 @@ import Utils from "../utils/utils";
 const orderRouter = Router();
 
 //신규주문
-orderRouter.post("/", loginRequired ,async (req, res, next) => {
+orderRouter.post("/register", loginRequired ,async (req, res, next) => {
   try {
     Utils.isemptyObject(req.body)
     const userId = req.currentUserId;

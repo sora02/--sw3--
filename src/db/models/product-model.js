@@ -15,8 +15,14 @@ export class ProductModel {
       return foundProduct;
     }
 
+    async findByName(title) {
+      const foundProduct = await Product.findOne({ title });
+      return foundProduct;
+    }
+
     async findByProductId(productId) {
-      const product = await Product.findOne({ _id: productId});
+      const product = await Product.findOne( { _id: productId });
+      console.log(productId)
       return product;
     }
   

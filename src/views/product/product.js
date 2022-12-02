@@ -8,7 +8,7 @@ import {
   
 } from "../useful-functions.js";
 import createNavbar  from "/navbar.js";
-
+import sidebar  from "/sidebar.js";
 const productcontainerElem = document.querySelector("#product-container");
 const titleBoldElem = document.querySelector("#title-bold");
 const titleThinElem = document.querySelector("#title-thin");
@@ -20,6 +20,7 @@ function addAllElements() {
     addProductItemsToContainer();
     createNavbar();
     addTitleBold();
+    sidebar();
 }
   
 function addAllEvents() {}
@@ -32,7 +33,7 @@ async function addProductItemsToContainer() {
 // 제품들 insert로 html에 집어넣기
      products.forEach(async (product) => {
       // 객체 destructuring
-      const { title, price, shortDescription, _id} = product;
+      const { _id, title, price, shortDescription} = product;
       const random = randomId();
       productcontainerElem.insertAdjacentHTML(
         "beforeend",

@@ -4,19 +4,6 @@
   justify-content: center;
   height: 100vh;
 }
-
-.landing {
-  cursor: pointer;
-  border: 1px solid red;
-  padding: 10px;
-}
-
-.greeting {
-  cursor: pointer;
-  border: 1px solid blue;
-  padding: 10px;
-  margin-left: 3rem;
-}
 .left-side-bar{
   margin-top: -1000px;
 	margin-bottom: -1000px;

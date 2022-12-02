@@ -27,8 +27,8 @@ class ProductService {
       return foundProduct;
     }
 
-    async getProductById(name) {
-      const foundProduct = await this.productModel.findByProductId(name);
+    async getProductById(id) {
+      const foundProduct = await this.productModel.findByProductId(id);
       return foundProduct;
     }
 

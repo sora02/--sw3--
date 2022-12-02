@@ -10,6 +10,8 @@ import {
     randomPick,
 } from "../useful-functions.js"
 import { deleteFromDb, getFromDb, putToDb } from "../indexed-db.js";
+import createNavbar  from "/navbar.js";
+
 
 //요소 가져오기
 const nameElem = document.querySelector("#name");
@@ -39,12 +41,13 @@ window.onload = function(){
 
 addAllElements();
 addAllEvents();
-navigate();
 
 // html에 요소를 추가하는 함수들을 묶어주어서 코드를 깔끔하게 하는 역할임.
 function addAllElements() {
   insertOrderSummary();
   insertUserData();
+  navigate();
+  createNavbar();
 }
 
 // addEventListener들을 묶어주어서 코드를 깔끔하게 하는 역할임.
@@ -55,17 +58,17 @@ function addAllEvents() {
 
 // 페이지 로드 시 실행되며, 결제정보 카드에 값을 삽입함.
 async function insertOrderSummary() {
-  const { ids, selectedIds} = await getFromDb(
+  const { ids, selectedIds, productsTotal} = await getFromDb(
     "order",
     "summary"
   );
-
+  orderTotalElem.innerText = addCommas(productsTotal);
   // 구매할 아이템이 없다면 다른 페이지로 이동시킴
   const hasItemInCart = ids.length !== 0;
   const hasItemToCheckout = selectedIds.length !== 0;
 
   if (!hasItemInCart) {
-    const categorys = await Api.get("/api/categorylist");
+    const categorys = await Api.get("/api/categories/get");
     const categoryTitle = randomPick(categorys).title;
 
     alert(`구매할 제품이 없습니다. 제품을 선택해 주세요.`);
@@ -76,7 +79,7 @@ async function insertOrderSummary() {
   if (!hasItemToCheckout) {
     alert("구매할 제품이 없습니다. 장바구니에서 선택해 주세요.");
 
-    return window.location.replace("../cart");
+    return window.location.replace("/cart");
   }
 
   // 화면에 보일 상품명
@@ -93,10 +96,10 @@ async function insertOrderSummary() {
   }
 
   orderedProductElem.innerText = productsTitle;
-
+  
   if (hasItemToCheckout) {
     deliveryFeeElem.innerText = "3,000원";
-    totalPriceElem.innerText = `${addCommas(orderTotalElem + 3000)}원`;
+    totalPriceElem.innerText = `${addCommas(productsTotal + 3000)}원`;
   } else {
     deliveryFeeElem.innerText = `0원`;
     totalPriceElem.innerText = `0원`;
@@ -106,7 +109,7 @@ async function insertOrderSummary() {
 }
 
 async function insertUserData() {
-  const userData = await Api.get("/api/user");
+  const userData = await Api.get("/api/users/oneuser");
   const { fullName, phoneNumber, address } = userData;
 
   // 만약 db에 데이터 값이 있었다면, 배송지정보에 삽입
@@ -149,7 +152,7 @@ async function doCheckout() {
 
   try {
     // 전체 주문을 등록함
-    const orderData = await Api.post("/api/order", {
+    const orderData = await Api.post("/api/orders/register", {
       summaryTitle,
       totalPrice,
       address,
@@ -162,7 +165,7 @@ async function doCheckout() {
       const { quantity, price } = await getFromDb("cart", productId);
       const totalPrice = quantity * price;
 
-      await Api.post("/api/orderitem", {
+      await Api.post("/api/orders/orderitem", {
         orderId,
         productId,
         quantity,
@@ -187,7 +190,7 @@ async function doCheckout() {
         detailAddress,
       },
     };
-    await Api.post("/api/user/deliveryinfo", data);
+    await Api.post("/api/orders/deliveryinfo", data);
 
     alert("결제 및 주문이 정상적으로 완료되었습니다.\n감사합니다.");
     window.location.href = "../ordercheck";

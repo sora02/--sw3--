@@ -41,7 +41,7 @@ productRouter.get("/:category", async (req, res, next) => {
 
 })
 productRouter.get("/detail/:id", async (req, res, next) => {
-  const { id } = req.params.id;
+  const { id } = req.params;
   try {
     console.log(req);
     const foundProduct = await productService.getProductById(id);

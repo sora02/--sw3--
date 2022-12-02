@@ -11,7 +11,7 @@ body {
     color: #fff;
 }
 
-.container {
+.delivery-container {
     margin: 50px 10px 10px 161px;
     display: flex;
     flex-direction: row;
@@ -66,6 +66,7 @@ input {
 .info {
     padding-left: 20px;
 }
-.deliveryFee {
+.deliveryFee, .ordertotal, .total-price {
     padding-left: 200px;
 }
+

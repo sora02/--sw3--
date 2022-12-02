@@ -4,8 +4,9 @@ import {
     addCommas,
     checkUrlParams,
   } from "/useful-functions.js";
-  import createNavbar  from "/navbar.js";
-
+import createNavbar  from "/navbar.js";
+import sidebar  from "/sidebar.js";
+import { addToDb, putToDb } from "../../indexed-db.js";
    
 const productImageTag = document.querySelector("#productImageTag");
 const titleTag = document.querySelector("#titleTag");
@@ -17,6 +18,7 @@ const purchaseButton = document.querySelector("#purchaseButton");
 
 insertProductData();
 createNavbar();
+sidebar();
 
 async function insertProductData() {
   const { id } = getUrlParams();
@@ -34,11 +36,10 @@ async function insertProductData() {
     titleTag.innerText = title;
     detailDescriptionTag.innerText = detailDescription;
     priceTag.innerText = `${addCommas(price)}원`;
-}  
-
-addToCartButton.addEventListener("click", async () => {
+    
+    addToCartButton.addEventListener("click", async () => {
   try {
-    await insertDb(product);
+    insertDb(product);
 
     alert("장바구니에 추가되었습니다.");
   } catch (err) {
@@ -64,6 +65,7 @@ purchaseButton.addEventListener("click", async () => {
     window.location.href = "/order";
   }
 });
+}  
 
 
 async function insertDb(product) {

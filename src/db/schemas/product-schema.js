@@ -1,4 +1,5 @@
 import { Schema } from "mongoose";
+import { productService } from "../../services";
 
 const ProductSchema = new Schema(
   {
