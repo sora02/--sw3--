@@ -7,7 +7,7 @@ const createNavbar = () => {
    container.insertAdjacentHTML("beforeend", `
    <!-- 헤더 -->
    <header style="text-align : center;">
-       <a href="/home" >shop</a>
+       <a href="/" >shop</a>
      </header>
    <nav>
        <div class="navbar-end breadcrumb my-auto" aria-label="breadcrumbs">

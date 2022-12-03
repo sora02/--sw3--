@@ -11,7 +11,7 @@ viewsRouter.use("/login", serveStatic("login"));
 viewsRouter.use("/account", serveStatic("account"));
 viewsRouter.use("/admin", serveStatic("admin"));
 // "home"이건 나중에 메인 페이지로 업데이트 해야한다.
-viewsRouter.use("/home", serveStatic("home"));
+viewsRouter.use("/", serveStatic("home"));
 viewsRouter.use("/product", serveStatic("product"));
 viewsRouter.use("/product/detail", serveStatic("product_detail"));
 viewsRouter.use("/order", serveStatic("order"))
