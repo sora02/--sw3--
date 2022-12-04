@@ -90,9 +90,10 @@ userRouter.get("/userlist", loginRequired, async function (req, res, next) {
 });
 
 //유저 가져오기
-userRouter.get("/:id", loginRequired, async function (req, res, next) {
+userRouter.get("/get", loginRequired, async function (req, res, next) {
   try {
-    const users = await userService.getUserByUseridSafely();
+    const id = req.currentUserId;
+    const users = await userService.getMyinfo(id);
     res.status(200).json(users);
   } catch (error) {
     next(error);
@@ -100,7 +101,7 @@ userRouter.get("/:id", loginRequired, async function (req, res, next) {
 });
   
 //유저 정보수정(이름, 비밀번호, 이메일 수정)
-userRouter.patch("/", loginRequired, async function (req, res, next) {
+userRouter.patch("/update", loginRequired, async function (req, res, next) {
     try {
       Utils.isemptyObject(req.body);
       const userId = req.currentUserId;

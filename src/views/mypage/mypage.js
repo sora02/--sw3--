@@ -36,7 +36,7 @@ const setUserInfo = (user) => {
 const fetchUserInfo = async () => {
   const email = localStorage.getItem('email');
   try {
-    user = await Api.get(`/api/user/email/${email}`);
+    user = await Api.get(`/api/users/checkmyinfo`);
     setUserInfo(user);
   } catch (err) {
     alert(`${err.message}`);
@@ -96,7 +96,7 @@ const updateUserInfo = (e) => {
 // 유저 정보 수정 api
 const patchUserInfo = async (userInfo) => {
   try {
-    await Api.patch(`/api/user/update`, user._id, userInfo);
+    await Api.patch(`/api/users/update`, user._id, userInfo);
     alert('정상적으로 수정되었습니다.');
     window.location.href = '/account';
   } catch (err) {

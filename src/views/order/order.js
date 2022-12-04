@@ -8,6 +8,7 @@ import {
     checkLogin,
     navigate,
     randomPick,
+    getUrlParams,
 } from "../useful-functions.js"
 import { deleteFromDb, getFromDb, putToDb } from "../indexed-db.js";
 import createNavbar  from "/navbar.js";
@@ -16,7 +17,7 @@ import createNavbar  from "/navbar.js";
 //요소 가져오기
 const nameElem = document.querySelector("#name");
 const phoneNumElem = document.querySelector("#phone_number");
-const addressElem = document.querySelector("#address");
+const addressElem = document.querySelector("#address_kakao");
 const detailAddressElem = document.querySelector("#detail_address");
 const memoElem = document.querySelector("#memo");
 const buttonElem = document.querySelector("#button");
@@ -69,11 +70,11 @@ async function insertOrderSummary() {
 
   if (!hasItemInCart) {
     const categorys = await Api.get("/api/categories/get");
-    const categoryTitle = randomPick(categorys).title;
+    const categoryTitle = randomPick(categorys).category;
 
     alert(`구매할 제품이 없습니다. 제품을 선택해 주세요.`);
 
-    return window.location.replace(`/product/list?category=${categoryTitle}`);
+    return window.location.replace(`/product?category=${categoryTitle}`);
   }
 
   if (!hasItemToCheckout) {
@@ -109,7 +110,7 @@ async function insertOrderSummary() {
 }
 
 async function insertUserData() {
-  const userData = await Api.get("/api/users/oneuser");
+  const userData = await Api.get(`/api/users/get`);
   const { fullName, phoneNumber, address } = userData;
 
   // 만약 db에 데이터 값이 있었다면, 배송지정보에 삽입
@@ -152,25 +153,16 @@ async function doCheckout() {
 
   try {
     // 전체 주문을 등록함
-    const orderData = await Api.post("/api/orders/register", {
+    await Api.post("/api/orders/register", {
       summaryTitle,
       totalPrice,
       address,
     });
 
-    const orderId = orderData._id;
-
     // 제품별로 주문아이템을 등록함
     for (const productId of selectedIds) {
       const { quantity, price } = await getFromDb("cart", productId);
       const totalPrice = quantity * price;
-
-      await Api.post("/api/orders/orderitem", {
-        orderId,
-        productId,
-        quantity,
-        totalPrice,
-      });
 
       // indexedDB에서 해당 제품 관련 데이터를 제거함
       await deleteFromDb("cart", productId);
@@ -190,10 +182,10 @@ async function doCheckout() {
         detailAddress,
       },
     };
-    await Api.post("/api/orders/deliveryinfo", data);
+    await Api.post("/api/users/deliveryinfo", data);
 
     alert("결제 및 주문이 정상적으로 완료되었습니다.\n감사합니다.");
-    window.location.href = "../ordercheck";
+    window.location.href = "/ordercheck";
   } catch (err) {
     console.log(err);
     alert(`결제 중 문제가 발생하였습니다: ${err.message}`);

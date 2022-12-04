@@ -181,6 +181,16 @@ class UserService {
     let user = await this.userModel.delete(userId);
     return user;
   }
+
+  async saveDeliveryInfo(userId, deliveryInfo) {
+    const updatedUser = await this.userModel.update({
+      userId,
+      update: deliveryInfo,
+    });
+
+    return updatedUser;
+  }
+
 }
 
 const userService = new UserService(userModel);

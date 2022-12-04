@@ -15,10 +15,14 @@ const priceTag = document.querySelector("#priceTag");
 const addToCartButton = document.querySelector("#addToCartButton");
 const purchaseButton = document.querySelector("#purchaseButton");
 
+addAllEvents()
 
-insertProductData();
-createNavbar();
-sidebar();
+function addAllEvents() {
+  insertProductData();
+  createNavbar();
+  sidebar();
+}
+
 
 async function insertProductData() {
   const { id } = getUrlParams();

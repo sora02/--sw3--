@@ -10,14 +10,19 @@ const orderRouter = Router();
 orderRouter.post("/register", loginRequired ,async (req, res, next) => {
   try {
     Utils.isemptyObject(req.body)
-    const userId = req.currentUserId;
+    const Id = req.currentUserId;
+    const summaryTitle = req.body.summaryTitle;
+    const totalPrice = req.body.totalPrice;
+    const address = req.body.address;
+    const request = req.body.request;
+
 
     const newOrder = await orderService.addOrder({
-      personwhoordered : userId,
-      cart : req.body.cart,
-      address : req.body.address,
-      recipientname : req.body.recipientname,
-      recipientphonenumber : req.body.recipientphonenumber,
+      userId : Id,
+      summaryTitle,
+      totalPrice,
+      address,
+      request,
     });
 
     res.status(201).json(newOrder);

@@ -4,4 +4,4 @@ import {
 
 const button = document.querySelector("#button");
 
-button.addEventListener("click", navigate("/home"))
+button.addEventListener("click", navigate("/"))

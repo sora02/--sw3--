@@ -19,7 +19,7 @@ async function deleteregister(e) {
   //회원탈퇴 api요청
   try {
     const userInfo = { email, password };
-    await Api.delete('/api/delete', '', userInfo);
+    await Api.delete('/api/users/deletemyaccount', '', userInfo);
     alert('성공적으로 탈퇴되었습니다!');
 
     sessionStorage.removeItem('email');
