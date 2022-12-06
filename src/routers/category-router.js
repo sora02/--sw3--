@@ -51,7 +51,7 @@ categoryRouter.get("/category/:categories", async (req, res, next) => {
 // })
 
 // API 확인 완료
-categoryRouter.patch("/category/:categories", loginRequired, async(req, res, next) => {
+categoryRouter.patch("/:category", loginRequired, async(req, res, next) => {
   try {
     const { category } = req.params;
     const { newCategory } = req.body;
@@ -63,7 +63,7 @@ categoryRouter.patch("/category/:categories", loginRequired, async(req, res, nex
 })
 
 // API 확인 완료
-categoryRouter.delete("/category/:categories", loginRequired, async (req, res, next) => {  
+categoryRouter.delete("/:category", loginRequired, async (req, res, next) => {  
   try {
     const { category } = req.params;
     const deletedCategory = await categoryService.deleteCategory(category);

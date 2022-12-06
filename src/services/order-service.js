@@ -73,7 +73,7 @@ class OrderService {
 
   //관리자가 모든주문보기
   async chekallorders(userId){
-    await this.#checkIfYourAreAdmin(userId);
+    //await this.#checkIfYourAreAdmin(userId);
     const allorders = await this.orderModel.findAllOrders();
     return allorders;
   }

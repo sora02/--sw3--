@@ -38,7 +38,7 @@ async function categoryadd(e) {
     await Api.post("/api/categories/register", data);
     
     alert(`정상적으로 ${category} 카테고리가 등록되었습니다.`);
-    navigate(`/home`)
+    navigate(`/`)
     // 폼 초기화
     registerCategoryForm.reset();
    
@@ -60,43 +60,16 @@ async function categorydelete(e) {
     }
   
     try {
-      const data = { category };
   
-      await Api.delete(`/api/categories/${categoryData}`, data);
+      await Api.delete(`/api/categories/${category}`);
   
       alert(`정상적으로 ${category} 카테고리가 삭제되었습니다.`);
   
       // 폼 초기화
       registerCategoryForm.reset();
-      window.location.href="/home";
+      window.location.href="/";
     } catch (err) {
       console.error(err.stack);
       alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
     }
   }
-//카테고리 수정
-async function categoryedit(e) {
-  e.preventDefault();
-
-  const beCategory = titleInput.value;
-  const category = newtitleInput.value;
-  
-  // 입력 칸이 비어 있으면 진행 불가
-  if (!category ) {
-    return alert("내용을 입력해주세요.");
-  }
-
-  try {
-   
-    await Api.patch(`/api/categories/${categoryData}`, {category});
-
-    alert(`${beCategory} -> ${category} 카테고리로 수정되었습니다.`);
-
-    // 폼 초기화
-    registerCategoryForm.reset();
-    window.location.href="/home";
-  } catch (err) {
-    console.error(err.stack);
-    alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
-  }
-}

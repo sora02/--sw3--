@@ -28,9 +28,9 @@ const setUserInfo = (user) => {
   fullNameInput.value = user.fullName;
   emailInput.value = user.email;
   phoneNumberInput.value = user.phoneNumber || '';
-  userAddressInput.value = user.address ? user.address.address1 : '';
-  userAddressDetailInput.value = user.address ? user.address.address2 : '';
-  addressInput.value = user.address ? user.address.address3 : '';
+  userAddressInput.value = user.address ? user.address.addressinput: '';
+  userAddressDetailInput.value = user.address ? user.address.detailAddress : '';
+  //addressInput.value = user.address ? user.address.address3 : '';
 };
 
 const fetchUserInfo = async () => {
