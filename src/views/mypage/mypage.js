@@ -48,8 +48,8 @@ const updateUserInfo = (e) => {
   e.preventDefault();
 
   const fullName = fullNameInput.value;
-  const newPassword = newPasswordInput.value;
-  const newPasswordConfirm = newPasswordConfirmInput.value;
+  const Password = newPasswordInput.value;
+  const PasswordConfirm = newPasswordConfirmInput.value;
   const phoneNumber = phoneNumberInput.value;
   const userAddress = userAddressInput.value;
   const userAddressDetail = userAddressDetailInput.value;
@@ -57,8 +57,8 @@ const updateUserInfo = (e) => {
 
   
   const isFullNameValid = fullName.length >= 2;
-  const isPasswordValid = newPassword.length === 0 || newPassword.length >= 4;
-  const isPasswordConfirm = newPassword === newPasswordConfirm;
+  const isPasswordValid = Password.length === 0 || Password.length >= 4;
+  const isPasswordConfirm = Password === PasswordConfirm;
   const isPhoneNumber = phoneNumber.length === 0 || phoneNumber.length === 11;
 
   if (!isFullNameValid || !isPasswordValid) {
@@ -80,11 +80,10 @@ const updateUserInfo = (e) => {
   // 변경되는 유저 정보 
   const userInfo = {
     fullName,
-    newPassword,
+    Password,
     address: {
-      address1: userAddress,
-      address2: userAddressDetail,
-      address3: addressCode,
+      addressinput: userAddress,
+      detailAddress: userAddressDetail,
     },
     phoneNumber,
   };

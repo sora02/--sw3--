@@ -123,8 +123,8 @@ async function insertUserData() {
   }
 
   if (address) {
-    addressElem.value = address.addressElem;
-    detailAddressElem.value = address.detailAddressElem;
+    addressElem.value = address.addressinput;
+    detailAddressElem.value = address.detailAddress;
   }
 }
 

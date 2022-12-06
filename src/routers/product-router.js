@@ -6,7 +6,7 @@ import { adminGuard } from "../middlewares";
 const productRouter = Router();
 
 // API 확인 완료
-productRouter.post("/register", loginRequired,  async (req, res, next) => {  
+productRouter.post("/register", loginRequired, async (req, res, next) => {  
   try {
     const { title, categoryId, price, shortDescription, detailDescription, searchKeywords } = req.body
     const productInfo = { title, categoryId, price, shortDescription, detailDescription, searchKeywords };

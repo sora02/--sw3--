@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주문 조회</title>
-    <link rel="stylesheet" href="/orderconfirm/orderconfirm.css">
-    <script src="./orderconfirm.js" type="module" ref></script>
+    <link rel="stylesheet" href="orderconfirm.css">
+    <script src="orderconfirm.js" type="module" ref></script>
         <!-- 아이콘 -->
         <link
         rel="icon"
@@ -31,29 +31,23 @@
           <!-- 헤더 -->
 <div id="container"></div>
     <div id="header">
-        <h1 id="title">마이페이지</h1>
+        <strong class="title">마이페이지</strong>
     </div>
     <section id="my_info_box">
-        <h2 id="se_title">주문조회</h2>
-        <div class="title_wrap">
-            <div id="minititle">주문/배송 내역</div>
+        <p class="se_title">주문/배송 내역</p>
             <table>
                 <thead>
                     <tr>
                         <th>주문번호</th>
                         <th>상품명</th>
-                        <th>주문가격</th>
+                        <th>주문날짜</th>
                         <th>주문상태</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="4" class="nodata">주문내역이 존재하지 않습니다.</td>
-                    </tr>
+                <tbody id="ordercontainer">
                 </tbody>
             </table>
         </div>
     </section>
 </body>
-<script src="confirm.js"></script>
 </html>

@@ -3,6 +3,7 @@ import {
     getUrlParams,
     addCommas,
     checkUrlParams,
+    navigate,
   } from "/useful-functions.js";
 import createNavbar  from "/navbar.js";
 import sidebar  from "/sidebar.js";

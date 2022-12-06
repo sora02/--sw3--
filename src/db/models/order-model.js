@@ -27,8 +27,7 @@ export class OrderModel {
     return updatedeliveryStatus;
   }
   async findByUserId(userId){
-    const filter = { personwhoordered : userId };
-    const findByUserIdResult = await Order.find(filter);
+    const findByUserIdResult = await Order.find({ userId });
     return findByUserIdResult;
   }
   async findAllOrders(){

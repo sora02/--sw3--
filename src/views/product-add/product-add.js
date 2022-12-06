@@ -3,6 +3,7 @@ import * as Api from "/api.js";
 import {
   randomId,
 } from "../useful-functions.js";
+import createNavbar  from "/navbar.js";
 //import { checkLogin, randomId, createNavbar } from "../../useful-functions.js";
 
 // 요소(element)들과 상수들
@@ -29,6 +30,7 @@ addAllEvents();
 // html에 요소를 추가하는 함수들을 묶어주어서 코드를 깔끔하게 하는 역할임.
 function addAllElements() {
   addOptionsToSelectBox();
+  createNavbar();
 }
 
 // addEventListener들을 묶어주어서 코드를 깔끔하게 하는 역할임.

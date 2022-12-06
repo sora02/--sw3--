@@ -21,9 +21,8 @@ const UserSchema = new Schema(
     address: {
       type: new Schema(
         {
-          postalCode: String,
-          address1: String,
-          address2: String,
+          addressinput: String,
+          detailAddress: String,
         },
         {
           _id: false,
