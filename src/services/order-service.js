@@ -45,7 +45,7 @@ class OrderService {
 
 //관리자가 배송정보를 수정
   async setAdminOrder(userId, orderId, toUpdate){
-    await this.#checkIfYourAreAdmin(userId);
+    //await this.#checkIfYourAreAdmin(userId);
 
     const changedeliverystatus = await this.orderModel.adminUpdate({
       orderId,

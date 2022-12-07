@@ -18,7 +18,6 @@ const orderId = document.querySelector("#orderId");
 const orderDate = document.querySelector("#orderDate");
 const orderTitle = document.querySelector("#orderTitle");
 const orderStatus = document.querySelector("#orderStatus");
-const orderList = document.querySelector("#orderList")
 //api로 주문데이터 받아와서 보여주기
 async function inserOrderData() {
     const orderData = await Api.get(`/api/orders/chekmyorders`);
@@ -27,11 +26,14 @@ async function inserOrderData() {
         const {_id, createdAt, summaryTitle, deliverystatus} = order; 
         const date = createdAt.split("T")[0];    
         //주문 리스트 넣어주기
-        orderContainer.insertAdjacentHTML("beforeend", `<tr class="order-list" id="orderList">
-            <td id="orderId" class="order-id">${_id}</td> 
+        orderContainer.insertAdjacentHTML("beforeend", `<tr class="order-list">
+            <td id="orderId" class="order-id"><a href="order/detail?id=${_id}"  id="orderList-${_id}">${_id}</a></td>
             <td id="orderTitle" class="order-title">${summaryTitle}</td>
             <td id="orderDate" class="order-date">${date}</td>
             <td id="orderStatus" class="order-status">${deliverystatus}</td></tr>`)
+
+        const orderList = document.querySelector(`#orderList-${_id}`);
+        orderId.addEventListener("click", navigate(`order/detail?id=${_id}`))
     }
     
 }

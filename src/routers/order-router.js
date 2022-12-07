@@ -36,7 +36,7 @@ orderRouter.patch("/admin/:orderId", loginRequired, async (req, res, next) => {
   try {
     Utils.isemptyObject(req.body)
     const userId = req.currentUserId;
-    const {orderId} = req.params;
+    const { orderId } = req.params;
     const deliverystatus = req.body.deliverystatus;
     
     const toUpdate = {

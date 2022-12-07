@@ -166,7 +166,7 @@ class UserService {
   async setUser(userInfoRequired, toUpdate) {
     await this.#checkUserPasswordSame({
       userId : userInfoRequired.userId,
-      currentPassword : userInfoRequired.currentPassword,
+      password : userInfoRequired.password,
     });    
     const updatecomplete = await this.#updateUser({userId : userInfoRequired.userId, toUpdate:toUpdate})
     return updatecomplete;

@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { categoryService } from "../services/category-service.js"
 import { loginRequired } from "../middlewares";
-import { adminGuard } from "../middlewares";
+import { adminGuard } from "../middlewares"; 
+//어드민체크해주는 기능은 작동되지 않아 일단 빼놓음
 
 const categoryRouter = Router();
 

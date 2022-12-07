@@ -48,7 +48,7 @@ const updateUserInfo = (e) => {
   e.preventDefault();
 
   const fullName = fullNameInput.value;
-  const Password = newPasswordInput.value;
+  const password = newPasswordInput.value;
   const PasswordConfirm = newPasswordConfirmInput.value;
   const phoneNumber = phoneNumberInput.value;
   const userAddress = userAddressInput.value;
@@ -57,8 +57,8 @@ const updateUserInfo = (e) => {
 
   
   const isFullNameValid = fullName.length >= 2;
-  const isPasswordValid = Password.length === 0 || Password.length >= 4;
-  const isPasswordConfirm = Password === PasswordConfirm;
+  const isPasswordValid = password.length === 0 || password.length >= 4;
+  const isPasswordConfirm = password === PasswordConfirm;
   const isPhoneNumber = phoneNumber.length === 0 || phoneNumber.length === 11;
 
   if (!isFullNameValid || !isPasswordValid) {
@@ -80,7 +80,7 @@ const updateUserInfo = (e) => {
   // 변경되는 유저 정보 
   const userInfo = {
     fullName,
-    Password,
+    password,
     address: {
       addressinput: userAddress,
       detailAddress: userAddressDetail,
@@ -95,7 +95,7 @@ const updateUserInfo = (e) => {
 // 유저 정보 수정 api
 const patchUserInfo = async (userInfo) => {
   try {
-    await Api.patch(`/api/users/update`, user._id, userInfo);
+    await Api.patch(`/api/users/update`, "", userInfo);
     alert('정상적으로 수정되었습니다.');
     window.location.href = '/account';
   } catch (err) {

@@ -105,15 +105,15 @@ userRouter.patch("/update", loginRequired, async function (req, res, next) {
     try {
       Utils.isemptyObject(req.body);
       const userId = req.currentUserId;
-      const {fullName, password, email, currentPassword} = req.body;
-      istherePassword(currentPassword);
+      const {fullName, password, address,} = req.body;
+      istherePassword(password);
 
-      const userInfoRequired = { userId, currentPassword: currentPassword };
+      const userInfoRequired = { userId, password };
 
       const toUpdate = {
         ...(fullName && { fullName }),
         ...(password && { password }),
-        ...(email && { email }),
+        ...(address && { address }),
       };
 
       const updatedUserInfo = await userService.setUser(
