@@ -36,7 +36,7 @@
 
 <details><summary>카테고리 추가, 수정, 삭제</summary>
 
-![image](https://user-images.githubusercontent.com/66052289/206414618-46313997-8347-44f1-acc7-d0058e3212b2.gif)  
+
 
 </details>
 
