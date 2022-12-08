@@ -34,12 +34,10 @@
 
 </details>
 
-<details><summary>카테고리 추가 및 반영</summary>
+<details><summary>카테고리 추가, 수정, 삭제</summary>
 
-추후 관련 영상을 삽입하세요 (하기 2가지 방법 가능)
-1. 화면녹화 -> 유튜브 업로드 -> 유튜브 링크 삽입  
-2. 화면움짤녹화 -> 움짤삽입 (https://www.screentogif.com/ 활용가능)
-   
+![image](https://user-images.githubusercontent.com/66052289/206414618-46313997-8347-44f1-acc7-d0058e3212b2.gif)  
+
 </details>
 
 <details><summary>제품 추가 및 반영</summary>
