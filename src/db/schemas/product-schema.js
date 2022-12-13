@@ -19,9 +19,9 @@ const ProductSchema = new Schema(
     price: {
       type: Number,
     },
-    searchKeywords: {
-      type: [String],
-    },
+    // searchKeywords: {
+    //   type: [String],
+    // },
   },
   {
     collection: "products",

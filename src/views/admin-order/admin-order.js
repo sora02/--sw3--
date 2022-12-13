@@ -41,6 +41,10 @@ async function inserOrderData() {
             배송완료
             </option>
           </select></td>
+          <td class="column-2">
+          <button class="delete-button" id="deleteButton-${_id}" >주문 취소</button>
+        </td>
+
             </tr>`) 
             
    // 요소 선택

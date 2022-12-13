@@ -31,5 +31,8 @@ thead{
     padding: 20px 20px;
 }
 .order-list {
-    padding: 30px 0;
+    margin: 30px 0;
+}
+td {
+    padding: 5px 0;
 }
