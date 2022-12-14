@@ -87,7 +87,7 @@ class OrderService {
 
   //관리자가 주문삭제
   async deleteOrderByAdmin(orderId, userId){
-    await this.#checkIfYourAreAdmin(userId);
+    //await this.#checkIfYourAreAdmin(userId);
     const deleteorderbyAdmin = await this.orderModel.deleteThisOrder(orderId);
     return deleteorderbyAdmin;
   }
