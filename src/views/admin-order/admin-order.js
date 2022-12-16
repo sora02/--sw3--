@@ -16,7 +16,7 @@ async function inserOrderData() {
         const {_id, createdAt, summaryTitle, deliverystatus, userId} = order; 
         const date = createdAt.split("T")[0];    
         //주문 리스트 넣어주기
-        orderContainer.insertAdjacentHTML("beforeend", `<tr class="order-list" id="orderList">
+        orderContainer.insertAdjacentHTML("beforeend", `<tr class="order-list" id="orderList-${_id}">
             <td id="orderId" class="order-id">${_id}</td> 
             <td id="orderTitle" class="order-title">${summaryTitle}</td>
             <td id="orderStatus" class="order-status">${userId}</td>
@@ -41,6 +41,10 @@ async function inserOrderData() {
             배송완료
             </option>
           </select></td>
+          <td class="column-2">
+          <button class="delete-button" id="deleteButton-${_id}" >주문 취소</button>
+        </td>
+
             </tr>`) 
             
    // 요소 선택
@@ -64,8 +68,30 @@ async function inserOrderData() {
      await Api.patch("/api/orders/admin", _id, data);
    });
 
+
+    const deleteButton = document.querySelector(`#deleteButton-${_id}`);
+   deleteButton.addEventListener("click", deleteOrder);
+    async function deleteOrder(e) {
+    e.preventDefault();
+
+    try {
+        await Api.delete("/api/orders/admin", _id);
+        alert("주문 정보가 삭제되었습니다.");
+
+        const deletedItem = document.querySelector(`#orderList-${_id}`);
+        deletedItem.remove();
+
+      }
+    catch (err){
+      alert(`주문정보 삭제 과정에서 오류가 발생하였습니다: ${err}`);
+    }
+      
+  
+   }
+
     }
     
-   
+
+ 
   
 }

@@ -38,7 +38,7 @@ function addAllEvents() {
   imageInput.addEventListener("change", handleImageUpload);
   submitButton.addEventListener("click", handleSubmit);
   categorySelectBox.addEventListener("change", handleCategoryChange);
-  addKeywordButton.addEventListener("click", handleKeywordAdd);
+  //addKeywordButton.addEventListener("click", handleKeywordAdd);
 }
 
 // 제품 추가 - 사진은 AWS S3에 저장, 이후 제품 정보를 백엔드 db에 저장.
@@ -51,7 +51,7 @@ async function handleSubmit(e) {
   const categoryId = categorySelectBox.value;
   const shortDescription = shortDescriptionInput.value;
   const detailDescription = detailDescriptionInput.value;
-  const image = imageInput.files[0];
+  //const image = imageInput.files[0];
   const price = parseInt(priceInput.value);
 
   // 입력 칸이 비어 있으면 진행 불가
@@ -84,7 +84,7 @@ async function handleSubmit(e) {
       detailDescription,
       //imageKey,
       price,
-      searchKeywords,
+      //searchKeywords,
     };
 
     await Api.post(`/api/products/register`, data);
@@ -94,10 +94,10 @@ async function handleSubmit(e) {
     // 폼 초기화
     registerProductForm.reset();
     fileNameSpan.innerText = "";
-    keywordsContainer.innerHTML = "";
+    //keywordsContainer.innerHTML = "";
     categorySelectBox.style.color = "black";
     categorySelectBox.style.backgroundColor = "white";
-    searchKeywords = [];
+    //searchKeywords = [];
   } catch (err) {
     console.log(err.stack);
 
@@ -138,57 +138,57 @@ function handleCategoryChange() {
 
 // 아래 함수는, 검색 키워드 추가 시, 해당 키워드로 만든 태그가 화면에 추가되도록 함.
 // 아래 배열은, 나중에 api 요청 시 사용함.
-let searchKeywords = [];
-function handleKeywordAdd(e) {
-  e.preventDefault();
+// let searchKeywords = [];
+// function handleKeywordAdd(e) {
+//   e.preventDefault();
 
-  const newKeyword = searchKeywordInput.value;
+//   const newKeyword = searchKeywordInput.value;
 
-  if (!newKeyword) {
-    return;
-  }
+//   if (!newKeyword) {
+//     return;
+//   }
 
-  if (searchKeywords.includes(newKeyword)) {
-    return alert("이미 추가한 검색어입니다.");
-  }
+//   if (searchKeywords.includes(newKeyword)) {
+//     return alert("이미 추가한 검색어입니다.");
+//   }
 
-  searchKeywords.push(newKeyword);
+//   searchKeywords.push(newKeyword);
 
-  const random = randomId();
+//   const random = randomId();
 
-  keywordsContainer.insertAdjacentHTML(
-    "beforeend",
-    `
-    <div class="control" id="a${random}">
-      <div class="tags has-addons">
-        <span class="tag is-link is-light">${newKeyword}</span>
-        <a class="tag is-link is-light is-delete"></a>
-      </div>
-    </div>
-  `
-  );
+//   keywordsContainer.insertAdjacentHTML(
+//     "beforeend",
+//     `
+//     <div class="control" id="a${random}">
+//       <div class="tags has-addons">
+//         <span class="tag is-link is-light">${newKeyword}</span>
+//         <a class="tag is-link is-light is-delete"></a>
+//       </div>
+//     </div>
+//   `
+//   );
 
-  // x 버튼에 삭제 기능 추가.
-  keywordsContainer
-    .querySelector(`#a${random} .is-delete`)
-    .addEventListener("click", handleKeywordDelete);
+//   // x 버튼에 삭제 기능 추가.
+//   keywordsContainer
+//     .querySelector(`#a${random} .is-delete`)
+//     .addEventListener("click", handleKeywordDelete);
 
-  // 초기화 및 사용성 향상
-  searchKeywordInput.value = "";
-  searchKeywordInput.focus();
-}
+//   // 초기화 및 사용성 향상
+//   searchKeywordInput.value = "";
+//   searchKeywordInput.focus();
+// }
 
-function handleKeywordDelete(e) {
-  // a 태그 클릭 -> 옆의 span 태그의 inenerText가 키워드임.
-  const keywordToDelete = e.target.previousElementSibling.innerText;
+// function handleKeywordDelete(e) {
+//   // a 태그 클릭 -> 옆의 span 태그의 inenerText가 키워드임.
+//   const keywordToDelete = e.target.previousElementSibling.innerText;
 
-  // 배열에서 삭제
-  const index = searchKeywords.indexOf(keywordToDelete);
-  searchKeywords.splice(index, 1);
+//   // 배열에서 삭제
+//   const index = searchKeywords.indexOf(keywordToDelete);
+//   searchKeywords.splice(index, 1);
 
-  // 요소 삭제
-  e.target.parentElement.parentElement.remove();
-}
+//   // 요소 삭제
+//   e.target.parentElement.parentElement.remove();
+// }
 
 
 

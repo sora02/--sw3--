@@ -31,9 +31,6 @@ async function inserOrderData() {
             <td id="orderTitle" class="order-title">${summaryTitle}</td>
             <td id="orderDate" class="order-date">${date}</td>
             <td id="orderStatus" class="order-status">${deliverystatus}</td></tr>`)
-
-        const orderList = document.querySelector(`#orderList-${_id}`);
-        orderId.addEventListener("click", navigate(`order/detail?id=${_id}`))
     }
     
 }

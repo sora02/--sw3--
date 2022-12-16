@@ -12,47 +12,28 @@ body {
 }
 
 .delivery-container {
-    margin: 50px 10px 10px 161px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: center;
 }
-.form {
-    padding: 20px 20px 20px 20px;
-}
+
 .pay_info {
-    padding-left: 15px;
-    padding-top: 20px;
     font-size: 20px;
+    margin: 10px 0;
+}
+.info {
+    margin: 15px 0;
 }
 input {
-    width: 350px;
-    height: 30px;
+    width: 600px;
+    height: 35px;
     border: solid 1px #c6c9d2;
-   margin: 10px 10px;
    display: block;
-}
-.product {
-    width: 500px;
-    height: 500px;
-    border: solid 1px #ccc;
-    display: inline;
-}
-.form {
-    border: solid 1px #ccc;
-    padding: 20px 20px;
-    margin-right: 100px;
-}
-.pay_info {
-    padding-left: 15px;
-    padding-top: 20px;
-    font-size: 20px;
 }
 .line {
     border-bottom: solid 2px black;
-    margin: 20px 20px;
+    width: 600px;
 }
 .all_product {
     margin-left: 20px;
@@ -60,13 +41,8 @@ input {
 .button {
     width: 355px;
     height: 38px;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin: 10px 120px;
 }
-.info {
-    padding-left: 20px;
+.section {
+    width: 750px;
 }
-.deliveryFee, .ordertotal, .total-price {
-    padding-left: 200px;
-}
-
