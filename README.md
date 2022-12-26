@@ -56,8 +56,8 @@
 </details>
 
 <details><summary>주문 기능</summary>
-
-![images](https://user-images.githubusercontent.com/66052289/209559883-fce157ea-4900-4918-bcbc-54690dd71d9f.gif)
+  
+![](https://user-images.githubusercontent.com/66052289/209563115-886b4f4c-38d6-4474-aba8-0394249558a0.gif)
 
 
 </details>
@@ -82,6 +82,12 @@
 |    관리자 페이지 - 카테고리                   |        관리자 페이지 - 주문확인           |
 |![image](https://user-images.githubusercontent.com/66052289/209560792-76da6bde-da90-4c94-a7cb-8ce68706b3de.png)|![image](https://user-images.githubusercontent.com/66052289/209561153-58f4b445-a470-403f-b84b-0e3e9c4c3e7b.png)|
 |   관리자 페이지 - 제품 추가                   |      제품 상세 페이지                     |
+|![image](https://user-images.githubusercontent.com/66052289/209561728-d85e8b06-d4f9-4156-ac7f-3808488604b0.png)|![image](https://user-images.githubusercontent.com/66052289/209561793-bb3e0319-d8a8-41eb-9dac-cd215f8b418f.png)|
+|   사용자 페이지 - 주문 조회                   |      사용자 페이지 - 회원정보 수정           |
+|![image](https://user-images.githubusercontent.com/66052289/209561850-b7e57530-a400-49fa-854a-3c42747ebf96.png)|![image](https://user-images.githubusercontent.com/66052289/209561895-c0c72b41-bdd7-4b0b-98b1-1495f8099c5d.png)|
+|사용자 페이지 - 회원 탈퇴|장바구니|
+|![image](https://user-images.githubusercontent.com/66052289/209562213-a2378a76-449b-4729-89d0-7ef350b7782b.png)|![image](https://user-images.githubusercontent.com/66052289/209561990-e613f07d-865d-43f7-b6b2-dd5c2209649d.png)|
+|주문 및 결제|결제 완료 페이지|
 <br />
 
 
@@ -123,15 +129,10 @@
 | 이름 | 담당 업무 |
 | ------ | ------ |
 | 조욱현 | 팀장/백엔드개발 |
-| ------ | ------ |
 | 백소라 | 프론트엔드팀장/프론트엔드개발 |
-| ------ | ------ |
 | 김준영 | 프론트엔드개발 |
-| ------ | ------ |
 | 김민지 | 프론트엔드개발 |
-| ------ | ------ |
 | 김은비 | 프론트엔드개발 |
-| ------ | ------ |
 | 장은미 | 엔드개발 |
 <br />
 
