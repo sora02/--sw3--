@@ -64,9 +64,7 @@
 
 <details><summary>관리자 페이지</summary>
 
-추후 관련 영상을 삽입하세요 (하기 2가지 방법 가능)
-1. 화면녹화 -> 유튜브 업로드 -> 유튜브 링크 삽입  
-2. 화면움짤녹화 -> 움짤삽입 (https://www.screentogif.com/ 활용가능)
+![images](https://user-images.githubusercontent.com/66052289/209560097-9458b3c3-232e-43e0-b7d9-796cc41c726a.gif)
 
 </details>
 
@@ -76,11 +74,13 @@
 
 |  |  |
 | ------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------|
-| ![image](https://i.ibb.co/jyxjcd3/image.png) | ![image](https://i.ibb.co/Q860RKz/image.png) |
+|![image]![image](https://user-images.githubusercontent.com/66052289/209560232-010caa95-d42c-47eb-91fc-7ae2d16c4ec3.png) |![image](https://i.ibb.co/Q860RKz/image.png) 
 |    메인 페이지                                |      회원가입 화면                            |
-| ![image](https://i.ibb.co/RpYN379/image.png) |                                         |
-|    로그인 페이지                              |     앞으로 추가할 페이지                         |
-
+| ![image](https://i.ibb.co/RpYN379/image.png)  |       ![image](https://user-images.githubusercontent.com/66052289/209560337-712d1a61-e392-4787-b5de-adb63db4663b.png)
+|    로그인 페이지                              |     상품화면                         |
+|![image](https://user-images.githubusercontent.com/66052289/209560457-1db3eca4-ed73-4e7f-8228-dd4a865a25cc.png)| ![image](https://user-images.githubusercontent.com/66052289/209560600-8a59fdc9-5274-444a-8f0d-fb079dc09d66.png)
+|
+|    관리자 페이지 - 카테고리                   |        관리자 페이지 - 주문확인           |
 <br />
 
 
