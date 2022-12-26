@@ -79,8 +79,9 @@
 | ![image](https://i.ibb.co/RpYN379/image.png)  |       ![image](https://user-images.githubusercontent.com/66052289/209560337-712d1a61-e392-4787-b5de-adb63db4663b.png)
 |    로그인 페이지                              |     상품화면                         |
 |![image](https://user-images.githubusercontent.com/66052289/209560457-1db3eca4-ed73-4e7f-8228-dd4a865a25cc.png)| ![image](https://user-images.githubusercontent.com/66052289/209560600-8a59fdc9-5274-444a-8f0d-fb079dc09d66.png)
-|
 |    관리자 페이지 - 카테고리                   |        관리자 페이지 - 주문확인           |
+|![image](https://user-images.githubusercontent.com/66052289/209560792-76da6bde-da90-4c94-a7cb-8ce68706b3de.png)|![image](https://user-images.githubusercontent.com/66052289/209561153-58f4b445-a470-403f-b84b-0e3e9c4c3e7b.png)|
+|   관리자 페이지 - 제품 추가                   |      제품 상세 페이지                     |
 <br />
 
 
@@ -121,8 +122,17 @@
 
 | 이름 | 담당 업무 |
 | ------ | ------ |
-| 엘리스 | 팀장/개발 |
-
+| 조욱현 | 팀장/백엔드개발 |
+| ------ | ------ |
+| 백소라 | 프론트엔드팀장/프론트엔드개발 |
+| ------ | ------ |
+| 김준영 | 프론트엔드개발 |
+| ------ | ------ |
+| 김민지 | 프론트엔드개발 |
+| ------ | ------ |
+| 김은비 | 프론트엔드개발 |
+| ------ | ------ |
+| 장은미 | 엔드개발 |
 <br />
 
 ## 5. 실행 방법
