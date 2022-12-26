@@ -74,7 +74,7 @@
 
 |  |  |
 | ------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------|
-|![image]![image](https://user-images.githubusercontent.com/66052289/209560232-010caa95-d42c-47eb-91fc-7ae2d16c4ec3.png) |![image](https://i.ibb.co/Q860RKz/image.png) 
+|![image](https://user-images.githubusercontent.com/66052289/209560232-010caa95-d42c-47eb-91fc-7ae2d16c4ec3.png) |![image](https://i.ibb.co/Q860RKz/image.png) 
 |    메인 페이지                                |      회원가입 화면                            |
 | ![image](https://i.ibb.co/RpYN379/image.png)  |       ![image](https://user-images.githubusercontent.com/66052289/209560337-712d1a61-e392-4787-b5de-adb63db4663b.png)
 |    로그인 페이지                              |     상품화면                         |
