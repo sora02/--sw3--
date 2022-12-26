@@ -36,23 +36,22 @@
 
 <details><summary>카테고리 추가, 수정, 삭제</summary>
 
+![images](https://user-images.githubusercontent.com/66052289/209558950-72234013-67ce-491a-838c-571c944ef082.gif)
 
 
 </details>
 
 <details><summary>제품 추가 및 반영</summary>
 
-추후 관련 영상을 삽입하세요 (하기 2가지 방법 가능)
-1. 화면녹화 -> 유튜브 업로드 -> 유튜브 링크 삽입  
-2. 화면움짤녹화 -> 움짤삽입 (https://www.screentogif.com/ 활용가능)
+![images](https://user-images.githubusercontent.com/66052289/209559045-6f046fd8-5cf0-4092-be69-5c87e9c31437.gif)
+
 
 </details>
 
 <details><summary>장바구니 기능</summary>
 
-추후 관련 영상을 삽입하세요 (하기 2가지 방법 가능)
-1. 화면녹화 -> 유튜브 업로드 -> 유튜브 링크 삽입  
-2. 화면움짤녹화 -> 움짤삽입 (https://www.screentogif.com/ 활용가능)
+![images](https://user-images.githubusercontent.com/66052289/209559080-4a7d1c0f-b566-4f05-8147-f8595ab51cdf.gif)
+
 
 </details>
 
